@@ -1,39 +1,43 @@
-# Sistema de Pedidos em Go
+# Go Order Processing System
 
-Este é um exemplo simples de um sistema de pedidos em Go, que simula o funcionamento de um restaurante com dois trabalhadores ("Candier" e "Stringer") que processam pedidos em paralelo.
+This is a simple example of an order processing system in Go, simulating the operation of a restaurant with two workers ("Candier" and "Stringer") processing orders in parallel.
 
-## Conteúdo
+## Contents
 
-- [Conceitos Básicos](#conceitos-básicos)
-- [Estrutura do Código](#estrutura-do-código)
-- [Como Executar](#como-executar)
+- [Basic Concepts](#basic-concepts)
+- [Code Structure](#code-structure)
+- [How to Run](#how-to-run)
 
-## Conceitos Básicos
+## Basic Concepts
 
 ### Goroutine
 
-Em Go, goroutines são unidades leves de execução, semelhantes a threads leves, gerenciadas pelo runtime.
+In Go, goroutines are lightweight units of execution, similar to lightweight threads, managed by the Go runtime.
 
-### Canal (Channel)
+### Channel
 
-Canais são estruturas de dados em Go usadas para comunicação entre goroutines. Eles permitem o envio e recebimento de dados entre goroutines.
+Channels are data structures in Go used for communication between goroutines. They allow the sending and receiving of data between goroutines.
 
 ### WaitGroup
 
-WaitGroup é uma maneira de aguardar que várias goroutines terminem a execução antes de continuar a execução da goroutine principal.
+WaitGroup is a way to wait for several goroutines to finish execution before continuing the execution of the main goroutine.
 
-## Estrutura do Código
+## Code Structure
 
-O código consiste em:
+The code consists of:
 
-- Definição de um tipo `Order` para representar pedidos.
-- Funções para processar pedidos (`processOrder`) e esperar por novos pedidos (`waitForOrders`).
-- Uma função `worker` que representa um trabalhador que recebe e processa pedidos de um canal.
-- A função principal (`main`) cria um canal, duas goroutines para os trabalhadores e simula a criação e envio de pedidos.
+- Definition of an `Order` type to represent orders.
+- Functions to process orders (`processOrder`) and wait for new orders (`waitForOrders`).
+- A `worker` function representing a worker that receives and processes orders from a channel.
+- The `main` function creates a channel, two goroutines for the workers, and simulates the creation and sending of orders.
 
-## Como Executar
+## How to Run
 
-Para executar o código, certifique-se de ter o ambiente Go instalado e execute o seguinte comando:
+To run the code, make sure you have the Go environment installed and execute the following command:
 
 ```bash
 go run main.go
+```
+
+## Credits
+[Go Concurrency Visually Explained](https://blog.stackademic.com/go-concurrency-visually-explained-channel-c6f88070aafa)
